@@ -9,7 +9,7 @@ stories:
   - intent: mood_great
   - action: utter_happy
 
-- story: sad path 1
+- story: sad path
   steps:
   - intent: greet
   - action: utter_greet
@@ -25,14 +25,24 @@ stories:
   - action: utter_greet
   - intent: ask_product_recommendation
   - action: utter_ask_product_category
-  - intent: inform_product_category
+  - intent: inform_product_category  # O usuário informa a categoria
     entities:
     - product_category: "camisetas"
-  - action: action_recommend_product
+  - action: action_recommend_product   # A action customizada é chamada
 
-- story: order status path
+- story: order status with id provided initially
   steps:
   - intent: check_order_status
     entities:
     - order_id: "12345"
+  - action: action_get_order_status
+
+# (Opcional) Uma história para quando o usuário não informa o ID de primeira
+- story: order status without id initially
+  steps:
+  - intent: check_order_status
+  - action: utter_ask_for_order_id # Você precisaria criar essa resposta no domain.yml
+  - intent: inform_order_id
+    entities:
+    - order_id: "ABC-123"
   - action: action_get_order_status

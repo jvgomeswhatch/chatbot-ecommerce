@@ -7,12 +7,48 @@ nlu:
     - oi
     - olá
     - bom dia
+    - eae
+    - opa
 
 - intent: goodbye
   examples: |
     - tchau
     - até logo
     - adeus
+    - fui
+
+- intent: affirm
+  examples: |
+    - sim
+    - isso
+    - positivo
+    - com certeza
+
+- intent: deny
+  examples: |
+    - não
+    - de jeito nenhum
+    - negativo
+
+- intent: mood_great
+  examples: |
+    - perfeito
+    - ótimo
+    - incrível
+    - estou me sentindo ótimo
+
+- intent: mood_unhappy
+  examples: |
+    - meu dia está terrível
+    - estou triste
+    - não estou bem
+    - que droga
+
+- intent: bot_challenge
+  examples: |
+    - você é um bot?
+    - você é humano?
+    - estou falando com um robô?
 
 - intent: ask_shipping_info
   examples: |
@@ -20,28 +56,32 @@ nlu:
     - vocês entregam na minha cidade?
     - qual o valor da entrega?
     - e sobre a entrega?
-    - quantos custa para enviar?
+    - me fale sobre o frete
 
 - intent: ask_payment_options
   examples: |
     - quais as formas de pagamento?
     - posso pagar com boleto?
     - aceitam pix?
+    - como posso pagar?
+    - quais cartões vocês aceitam?
 
 - intent: ask_product_recommendation
   examples: |
     - me recomende um produto
     - o que você sugere?
     - estou procurando por algo novo
-    - me dê sugestão de compra
-    - o que você tem de bom?
-    = me ajude a escolher um intem
+    - me dê uma sugestão de produto
+    - sugestões?
 
 - intent: inform_product_category
   examples: |
     - eu gosto de [camisetas](product_category)
     - estou procurando por [calças](product_category)
     - tem [sapatos](product_category)?
+    - pode ser [camisetas](product_category)
+    - [calças](product_category)
+    - que tal [sapatos](product_category)
 
 - intent: check_order_status
   examples: |

@@ -1,12 +1,27 @@
+# data/rules.yml
 version: "3.1"
 
 rules:
 
+# Regra para responder a perguntas sobre frete de forma consistente
+- rule: Respond to FAQs about shipping
+  steps:
+  - intent: ask_shipping_info
+  - action: utter_shipping_info
+
+# Regra para responder a perguntas sobre pagamento de forma consistente
+- rule: Respond to FAQs about payment options
+  steps:
+  - intent: ask_payment_options
+  - action: utter_payment_options
+
+# Regra para se despedir sempre que o usuário se despedir
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
+# Regra para se identificar como um bot quando desafiado
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
