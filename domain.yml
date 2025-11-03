@@ -1,0 +1,52 @@
+# domain.yml
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_shipping_info
+  - ask_payment_options
+  - ask_product_recommendation
+  - inform_product_category
+  - check_order_status
+  - inform_order_id
+
+entities:
+  - product_category
+  - order_id
+
+responses:
+  utter_greet:
+  - text: "Olá! Sou o assistente de compras da nossa loja. Como posso ajudar?"
+  utter_cheer_up:
+  - text: "Aqui está algo para te animar:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_did_that_help:
+  - text: "Isso ajudou?"
+  utter_happy:
+  - text: "Ótimo, continue!"
+  utter_goodbye:
+  - text: "Até mais!"
+  utter_iamabot:
+  - text: "Eu sou um bot, desenvolvido com Rasa."
+  utter_shipping_info:
+  - text: "Nós entregamos para todo o Brasil! O frete é calculado durante o checkout."
+  utter_payment_options:
+  - text: "Aceitamos cartão de crédito, boleto bancário e Pix."
+  utter_ask_product_category:
+  - text: "Claro! Qual categoria de produto você tem interesse? (ex: camisetas, calças, sapatos)"
+  utter_order_status_not_found:
+  - text: "Não consegui encontrar um pedido com esse número. Por favor, verifique o ID."
+
+actions:
+  - action_recommend_product
+  - action_get_order_status
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

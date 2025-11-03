@@ -1,0 +1,38 @@
+# data/stories.yml
+version: "3.1"
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: product recommendation path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_product_recommendation
+  - action: utter_ask_product_category
+  - intent: inform_product_category
+    entities:
+    - product_category: "camisetas"
+  - action: action_recommend_product
+
+- story: order status path
+  steps:
+  - intent: check_order_status
+    entities:
+    - order_id: "12345"
+  - action: action_get_order_status

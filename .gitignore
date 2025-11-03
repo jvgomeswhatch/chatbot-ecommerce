@@ -1,0 +1,36 @@
+# .gitignore
+
+# Ambiente Virtual do Python
+# NUNCA envie sua pasta de ambiente virtual. Ela é específica da sua máquina.
+.venv/
+venv/
+
+# Modelos treinados do Rasa
+# São arquivos binários grandes gerados a partir do seu código de treinamento.
+# O código-fonte (data/, config.yml) é o que deve ser versionado, não o resultado.
+models/
+
+# Cache, logs e resultados de testes do Rasa
+.rasa/
+results/
+.pytest_cache/
+*.log
+
+# Arquivos de cache e compilados do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de configuração de IDEs (Intelligent Development Environments)
+# Mantém o projeto limpo para desenvolvedores que usam diferentes editores.
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de dependências do Jupyter Notebook (se usar)
+.ipynb_checkpoints

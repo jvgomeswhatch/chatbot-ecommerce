@@ -1,0 +1,56 @@
+# data/nlu.yml
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - oi
+    - olá
+    - bom dia
+
+- intent: goodbye
+  examples: |
+    - tchau
+    - até logo
+    - adeus
+
+- intent: ask_shipping_info
+  examples: |
+    - como funciona o frete?
+    - vocês entregam na minha cidade?
+    - qual o valor da entrega?
+    - e sobre a entrega?
+    - quantos custa para enviar?
+
+- intent: ask_payment_options
+  examples: |
+    - quais as formas de pagamento?
+    - posso pagar com boleto?
+    - aceitam pix?
+
+- intent: ask_product_recommendation
+  examples: |
+    - me recomende um produto
+    - o que você sugere?
+    - estou procurando por algo novo
+    - me dê sugestão de compra
+    - o que você tem de bom?
+    = me ajude a escolher um intem
+
+- intent: inform_product_category
+  examples: |
+    - eu gosto de [camisetas](product_category)
+    - estou procurando por [calças](product_category)
+    - tem [sapatos](product_category)?
+
+- intent: check_order_status
+  examples: |
+    - qual o status do meu pedido?
+    - quero rastrear minha compra
+    - onde está o pedido [12345](order_id)?
+    - o status do pedido [ABC-123](order_id)
+
+- intent: inform_order_id
+  examples: |
+    - o número é [54321](order_id)
+    - id [XYZ-987](order_id)
