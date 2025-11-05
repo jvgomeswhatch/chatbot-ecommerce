@@ -39,6 +39,76 @@ O GIF abaixo demonstra um fluxo de conversa onde o usuário pergunta sobre forma
 
 ---
 
-### 📂 Estrutura do Projeto
+#### Instalação
 
-O projeto segue a estrutura padrão do Rasa, promovendo a manutenibilidade e escalabilidade.
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/seu-usuario/chatbot-ecommerce.git
+    cd chatbot-ecommerce
+    ```
+
+2.  **Crie e ative um ambiente virtual:**
+
+    *Para Linux/macOS:*
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+    *Para Windows:*
+    ```bash
+    python -m venv venv
+    .\venv\Scripts\activate
+    ```
+
+3.  **Instale as dependências:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### ▶️ Executando a Aplicação
+
+Para interagir com o chatbot, você precisará de **dois terminais** abertos na pasta do projeto.
+
+1.  **Treine o modelo de IA:**
+    (Este comando só precisa ser executado uma vez, ou sempre que você alterar os arquivos em `data/` ou `config.yml`)
+    ```bash
+    rasa train
+    ```
+
+2.  **Inicie o servidor de ações (Terminal 1):**
+    Este servidor executa o código Python customizado que está em `actions/actions.py`.
+    ```bash
+    rasa run actions
+    ```
+
+3.  **Inicie o chatbot e converse (Terminal 2):**
+    Abra um novo terminal, ative o ambiente virtual e execute o comando abaixo para conversar com seu bot.
+    ```bash
+    rasa shell
+    ```
+
+### 🧪 Executando os Testes
+
+O Rasa possui um conjunto de testes integrado que valida seus dados de treinamento. Para executar os testes, rode o seguinte comando:
+
+```bash
+rasa test
+
+
+📂 Estrutura do Projeto
+
+chatbot-ecommerce/
+├── actions/
+│   └── actions.py         # Lógica customizada em Python
+├── data/
+│   ├── nlu.yml            # Dados de treinamento de NLU
+│   ├── rules.yml          # Regras para conversas diretas
+│   └── stories.yml        # Fluxos de conversa (histórias)
+├── models/                # Modelos treinados (.tar.gz)
+├── .github/               # Workflows de CI/CD
+├── .gitignore             # Arquivos ignorados pelo Git
+├── config.yml             # Pipeline de NLU e políticas de diálogo
+├── domain.yml             # O "cérebro" do bot
+├── endpoints.yml          # Configuração de endpoints
+├── requirements.txt       # Dependências do projeto
+└── README.md              # Esta documentação
